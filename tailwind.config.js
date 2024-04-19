@@ -12,6 +12,9 @@ export default {
         caret:"var(--caret-color)",
         error:"var(--error-color)",
         typography:"var(--sub-text-color)",
+      },
+      fontFamily:{
+        roboto:["Roboto Mono"," monospace"]
       }
     },
   },
