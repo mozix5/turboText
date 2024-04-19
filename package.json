@@ -13,7 +13,8 @@
     "@faker-js/faker": "^8.4.1",
     "framer-motion": "^11.1.5",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "react-icons": "^5.1.0"
   },
   "devDependencies": {
     "@types/react": "^18.2.66",
