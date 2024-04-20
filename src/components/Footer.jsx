@@ -1,13 +1,15 @@
-import React from 'react'
+import React from "react";
+import { changeTheme } from "../utils/helpers/changeTheme";
 
 const Footer = () => {
   return (
-    <div className='flex gap-6 py-8'>Footer
-    <button onClick={() => changeTheme("")}>theme1</button>
+    <div className="flex gap-6 py-8">
+      Footer
+      <button onClick={() => changeTheme("")}>theme1</button>
       <button onClick={() => changeTheme("theme2")}>theme2</button>
       <button onClick={() => changeTheme("theme3")}>theme3</button>
     </div>
-  )
-}
+  );
+};
 
-export default Footer
+export default Footer;

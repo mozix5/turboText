@@ -3,51 +3,61 @@ import GenerateWords from "./components/GenerateWords";
 import InputText from "./components/InputText";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
-import Caret from "./components/Caret";
 import { VscDebugRestart } from "react-icons/vsc";
+import { faker } from "@faker-js/faker";
 
 export const App = () => {
   const [userInput, setUserInput] = useState([]);
   const [timer, setTimer] = useState(30); // Initial timer value
   const [flag, setFlag] = useState(false);
+  const [words, setWords] = useState("");
+
+  useEffect(() => {
+    setWords(faker.word.words(20));
+    // console.log(words);
+  }, []);
 
   useEffect(() => {
     let intervalId;
     if (flag) {
       intervalId = setInterval(() => {
-        setTimer((prevTimer) => prevTimer - 1); 
+        setTimer((prevTimer) => {
+          if (prevTimer > 0) {
+            return prevTimer - 1;
+          } else {
+            setFlag(false);
+            return 0;
+          }
+        });
       }, 1000);
     }
 
     return () => clearInterval(intervalId);
-  }, [flag]); 
+  }, [flag]);
 
   const handleKeyPress = (e) => {
-    setFlag(true); 
+    setFlag(true);
     setUserInput((prevInput) => [...prevInput, e.key]);
   };
 
   const restartGame = () => {
-    setTimer(30); 
-    setUserInput([]); 
-    setFlag(false); 
+    setTimer(30);
+    setUserInput([]);
+    setFlag(false);
   };
 
   return (
     <div
-      className="h-screen bg-primary font-roboto px-48 flex flex-col"
+      className="h-screen w-screen overflow-hidden bg-primary font-roboto px-48 flex flex-col"
       onKeyDown={handleKeyPress}
       tabIndex="0"
     >
       <Navbar />
-      <div className="leading-relaxed text-2xl tracking-wider flex-1 flex flex-col justify-center">
-        <div className="text-typography">{timer}</div>
-        <div className="relative mb-4">
-          <GenerateWords />
-          <div className="absolute top-0 flex items-center min-h-10">
-            <InputText text={userInput} />
-            <Caret />
-          </div>
+      <div className="leading-relaxed text-2xl tracking-wider flex-1 flex flex-col justify-center flex-wrap">
+        <div className="text-caret py-8">{timer}</div>
+        <div className="relative mb-4 h-28 break-all">
+          <GenerateWords words={words} />
+          <InputText text={userInput} textToWrite={words} />
         </div>
         <div className="flex justify-center py-6">
           <VscDebugRestart

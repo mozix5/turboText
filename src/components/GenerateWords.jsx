@@ -1,11 +1,11 @@
-import { faker } from '@faker-js/faker'
-import React from 'react'
+import React from "react";
 
-const GenerateWords = () => {
-    const randomWords=faker.word.words(19)
+const GenerateWords = ({ words }) => {
   return (
-    <div className=' text-typography'>GenerateWords {randomWords}</div>
-  )
-}
+    <div className=" text-typography ">
+      <span>{words}</span>
+    </div>
+  );
+};
 
-export default GenerateWords
+export default GenerateWords;
