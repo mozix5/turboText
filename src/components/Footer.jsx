@@ -1,5 +1,5 @@
 import React from "react";
-import { changeTheme } from "../utils/helpers/changeTheme";
+import { changeTheme } from "../utils/helpers/helpers";
 
 const Footer = () => {
   return (

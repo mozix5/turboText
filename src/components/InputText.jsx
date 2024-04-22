@@ -5,14 +5,13 @@ import { AnimatePresence, motion } from "framer-motion";
 const InputText = ({ text, textToWrite }) => {
   const isEmpty = text.length === 0;
   textToWrite = textToWrite.split("");
-  // console.log(textToWrite);
+  // console.log(text);
   return (
     <div className=" h-fit text-secondary absolute flex items-center flex-wrap inset-0 leading-relaxed">
       <AnimatePresence>
         {text.map((item, index) => {
           if (item === textToWrite[index]) {
-            const char = item;
-            return <Character char={char} />;
+            return <Character key={index} char={item} />;
           } else {
             return (
               <Character key={index} char={textToWrite[index]} flag={true} />
