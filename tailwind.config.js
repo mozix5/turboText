@@ -7,11 +7,12 @@ export default {
   theme: {
     extend: {
       colors:{
-        primary:"var(--bg-color)",
-        secondary:"var(--text-color)",
+        bgPrimary:"var(--bg-primary)",
+        bgSecondary:"var(--bg-secondary)",
+        textPrimary:"var(--text-primary)",
         caret:"var(--caret-color)",
         error:"var(--error-color)",
-        typography:"var(--sub-text-color)",
+        textSecondary:"var(--text-secondary)",
       },
       fontFamily:{
         roboto:["Roboto Mono"," monospace"]

@@ -7,7 +7,7 @@ const InputText = ({ text, textToWrite }) => {
   textToWrite = textToWrite.split("");
   // console.log(text);
   return (
-    <div className=" h-fit text-secondary absolute flex items-center flex-wrap inset-0 leading-relaxed">
+    <div className=" h-fit text-textPrimary absolute flex items-center flex-wrap inset-0 leading-relaxed">
       <AnimatePresence>
         {text.map((item, index) => {
           if (item === textToWrite[index]) {

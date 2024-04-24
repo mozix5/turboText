@@ -19,6 +19,6 @@ export const getAccuracy = (userWords, errors) => {
 };
 
 export const wpm = (totalCharacters, errors, time) => {
-  const netWpm = ((totalCharacters / 5) - errors) / (time / 60); // Convert time to minutes
-  return Math.max(0, netWpm); // Ensure WPM is not negative
+  const netWpm = ((totalCharacters.length/ 5) - errors) / (time / 60); 
+  return netWpm
 };

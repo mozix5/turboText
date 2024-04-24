@@ -3,28 +3,45 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: 'Mixiwa';
+  src: local('Mixiwa'), url(./fonts/mixiwa/woff/mixiwa-mixiwa-400.woff) format('woff');
+
+  font-family: 'Helvetica';
+  src: local('Helvetica'),url(./fonts/helvetica/helvetica-rounded-bold-5871d05ead8de.woff)
+  format('woff');
+}
+
 @layer base{
   html{
-    --bg-color:#262a33;
+    --bg-primary:#262a33;
     --caret-color:#43ffaf;
-    --sub-text-color:#526777;
+    --text-secondary:#526777;
     --error-color:#ff5f5f;
-    --text-color:#e5f7ef;
+    --text-primary:#e5f7ef;
   }
 }
 
 [data-theme="theme2"]{
-  --bg-color:#5897fb;
+  --bg-primary:#212121;
   --caret-color:#475782;
-  --sub-text-color:#5C7EB9;
+  --text-secondary:#5C7EB9;
   --error-color:#ff5f5f;
-  --text-color:#cfcfcf;
+  --text-primary:#cfcfcf;
 
 }
 [data-theme="theme3"]{
-  --bg-color:#262a33;
+  --bg-primary:#262a33;
   --caret-color:#43ffaf;
-  --sub-text-color:#526777;
+  --text-secondary:#526777;
   --error-color:#ff5f5f;
   --text-color:#e5f7ef;
+}
+[data-theme="theme4"]{
+  --bg-primary:#212121;
+  --caret-color:#feff04;
+  --text-secondary:#5c4a9c;
+  --error-color:#ff5f5f;
+  --text-primary:#e8e8e8;
+  --bg-secondary:#1a1a1a;
 }
