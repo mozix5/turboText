@@ -10,6 +10,7 @@ export default {
         bgPrimary:"var(--bg-primary)",
         bgSecondary:"var(--bg-secondary)",
         textPrimary:"var(--text-primary)",
+        hoverText:"var(--text-hover)",
         caret:"var(--caret-color)",
         error:"var(--error-color)",
         textSecondary:"var(--text-secondary)",
