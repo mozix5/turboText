@@ -19,16 +19,16 @@
     --text-secondary:#526777;
     --error-color:#ff5f5f;
     --text-primary:#e5f7ef;
+    --text-hover:#e5f7ef;
   }
 }
-
 [data-theme="theme2"]{
   --bg-primary:#212121;
   --caret-color:#475782;
   --text-secondary:#5C7EB9;
   --error-color:#ff5f5f;
   --text-primary:#cfcfcf;
-
+  --text-hover:#e5f7ef;
 }
 [data-theme="theme3"]{
   --bg-primary:#262a33;
@@ -36,6 +36,7 @@
   --text-secondary:#526777;
   --error-color:#ff5f5f;
   --text-color:#e5f7ef;
+  --text-hover:#e5f7ef;
 }
 [data-theme="theme4"]{
   --bg-primary:#212121;
@@ -44,4 +45,10 @@
   --error-color:#ff5f5f;
   --text-primary:#e8e8e8;
   --bg-secondary:#1a1a1a;
+  --text-hover:#e5f7ef;
+}
+.glass-container{
+  background: rgba( 255, 255, 255, 0 );
+  backdrop-filter: blur( 6px );
+  -webkit-backdrop-filter: blur( 6px );
 }
