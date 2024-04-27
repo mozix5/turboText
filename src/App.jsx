@@ -8,6 +8,7 @@ import { faker } from "@faker-js/faker";
 import Result from "./components/Result";
 import { countErrors, getAccuracy, wpm } from "./utils/helpers/helpers";
 import { AnimatePresence } from "framer-motion";
+import { BsCursorFill } from "react-icons/bs";
 
 export const App = () => {
   const [userInput, setUserInput] = useState([]);
@@ -122,9 +123,10 @@ export const App = () => {
                 {!isFocused && (
                   <div
                     onClick={() => setIsFocused(true)}
-                    className="glass-container absolute top-0 left-0 right-0 bottom-0 text-gray-500 text-lg font-bold flex justify-center items-center"
+                    className="glass-container absolute top-0 left-0 right-0 bottom-0 text-gray-500 text-lg font-bold flex justify-center items-center gap-2"
                   >
-                    Click here to focus
+                    <span className=" cursor-default">Click here to focus</span>
+                    <BsCursorFill className=" -rotate-[80deg]" />
                   </div>
                 )}
               </div>
