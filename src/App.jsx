@@ -80,7 +80,7 @@ export const App = () => {
     setFlag(false);
   };
   return (
-    <div className="h-screen w-screen overflow-hidden bg-bgPrimary font-roboto px-48 flex flex-col justify-between">
+    <div className="h-screen w-screen overflow-hidden bg-bgPrimary font-roboto px-6 lg:px-48 flex flex-col justify-between">
       <Navbar />
       <div className="">
         <AnimatePresence>

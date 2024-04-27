@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 const Result = ({ userChar, textToWrite, errors, accuracy, wpm }) => {
   return (
     <motion.div
-      className="flex-1 text-caret flex items-center text-2xl justify-center gap-10"
+      className="flex-1 text-caret flex items-center text-2xl justify-center gap-10 md:flex-row flex-col"
       initial={{ y: 400 }}
       animate={{ y: 0 }}
     >
