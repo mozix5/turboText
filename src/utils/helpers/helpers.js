@@ -19,6 +19,7 @@ export const getAccuracy = (userWords, errors) => {
 };
 
 export const wpm = (totalCharacters, errors, time) => {
-  const netWpm = ((totalCharacters.length/ 5) - errors) / (time / 60); 
-  return netWpm
+  if (totalCharacters === 0) return 100; // Handle division by zero
+  const netWpm = (totalCharacters / 5 - errors) / (15 / 60);
+  return netWpm;
 };
