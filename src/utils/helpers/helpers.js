@@ -1,5 +1,6 @@
 export const changeTheme = (theme) => {
-  document.querySelector("html")?.setAttribute("data-theme", theme);
+  console.log("Changing theme to:", theme);
+  document.documentElement.setAttribute("data-theme", theme);
 };
 
 export const countErrors = (expected, userInput) => {
@@ -18,8 +19,17 @@ export const getAccuracy = (userWords, errors) => {
   return (correct / userWords) * 100;
 };
 
-export const wpm = (totalCharacters, errors, time) => {
-  if (totalCharacters === 0) return 100; // Handle division by zero
-  const netWpm = (totalCharacters / 5 - errors) / (15 / 60);
-  return netWpm;
+export const wpm = (totalCharacters, errors, timeLimit, elapsedSeconds) => {
+  if (totalCharacters === 0 || elapsedSeconds === 0) return 0;
+  const minutes = elapsedSeconds / 60;
+  // Standard WPM: only correct characters count
+  const netWpm = Math.max(0, (totalCharacters / 5 - errors) / minutes);
+  return Math.round(netWpm);
+};
+
+export const rawWpm = (totalCharacters, elapsedSeconds) => {
+  if (totalCharacters === 0 || elapsedSeconds === 0) return 0;
+  const minutes = elapsedSeconds / 60;
+  // Raw WPM: all typed characters count
+  return Math.round((totalCharacters / 5) / minutes);
 };
