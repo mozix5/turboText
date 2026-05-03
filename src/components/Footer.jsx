@@ -79,7 +79,7 @@ const Footer = () => {
         <motion.span layout transition={spring}>
           &#60;/
         </motion.span>
-        <a href="https://portfolyo-amber.vercel.app/" target="_blank">
+        <a href="https://recap-after-use.vercel.app/" target="_blank">
           <span>mozix</span>
         </a>
         <motion.span layout transition={spring}>

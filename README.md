@@ -2,7 +2,7 @@
 
 TurboText is a high-performance, minimalist typing application built for speed and precision. Inspired by the sleek aesthetics of Monkeytype, it offers a premium typing experience with real-time analytics, dynamic themes, and a focus on distraction-free performance.
 
-![TurboText Screenshot Placeholder](https://via.placeholder.com/1200x600/262a33/43ffaf?text=TurboText+Premium+Typing+Experience)
+![TurboText Preview](./public/preview.png)
 
 ## ✨ Features
 
@@ -57,4 +57,4 @@ Contributions, issues, and feature requests are welcome! Feel free to check the 
 Distributed under the MIT License. See `LICENSE` for more information.
 
 ---
-Built with ❤️ by [mozix](https://portfolyo-amber.vercel.app/)
+Built with ❤️ by [mozix](https://recap-after-use.vercel.app/)
