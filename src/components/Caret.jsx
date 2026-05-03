@@ -3,11 +3,14 @@ import { motion } from "framer-motion";
 const Caret = ({ repeatValue }) => {
   return (
     <motion.div
-      layout
+      initial={{ opacity: 1 }}
+      animate={{ opacity: [1, 0, 1] }}
       transition={{
-        duration: 0.1,
+        duration: 0.8,
+        repeat: Infinity,
+        ease: "easeInOut",
       }}
-      className=" w-[2px] leading-relaxed h-8 bg-caret"
+      className="w-[2px] h-[1.2em] bg-caret self-center ml-0.5"
     ></motion.div>
   );
 };
