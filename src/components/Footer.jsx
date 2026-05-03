@@ -23,11 +23,18 @@ const Footer = () => {
   
   const [show, setShow] = useState(false);
   const [hover, setHover] = useState(false);
-  const [selectedTheme, setSelectedTheme] = useState("superuser");
+  const [selectedTheme, setSelectedTheme] = useState("default");
 
-  const handleThemeChange = (theme) => {
-    changeTheme(theme);
-    setSelectedTheme(theme);
+  const themes = [
+    { name: "default", id: "" },
+    { name: "blue night", id: "theme2" },
+    { name: "superuser", id: "theme3" },
+    { name: "lavender", id: "theme4" },
+  ];
+
+  const handleThemeChange = (id, name) => {
+    changeTheme(id);
+    setSelectedTheme(name);
   };
 
   const container = {
@@ -46,7 +53,7 @@ const Footer = () => {
   };
 
   return (
-    <div className="flex gap-6 py-8 text-textSecondary items-center justify-between">
+    <div className="flex gap-6 py-4 text-textSecondary items-center justify-between">
       <div className="flex items-center gap-4 text-xl">
         <a href="https://github.com/mozix5" target="_blank">
           <FaGithubAlt className=" cursor-pointer hover:text-hoverText" />
@@ -83,34 +90,25 @@ const Footer = () => {
         <AnimatePresence>
           {show && (
             <motion.div
-              className=" absolute bottom-8 text-sm"
+              className=" absolute bottom-8 text-sm w-max"
               variants={container}
               initial="hidden"
               animate="show"
               exit="exit"
             >
-              <ThemeOption
-                theme="superuser"
-                handleClick={() => handleThemeChange("")}
-              />
-              <ThemeOption
-                theme="theme2"
-                handleClick={() => handleThemeChange("theme2")}
-              />
-              <ThemeOption
-                theme="theme3"
-                handleClick={() => handleThemeChange("theme3")}
-              />
-              <ThemeOption
-                theme="theme4"
-                handleClick={() => handleThemeChange("theme4")}
-              />
+              {themes.map((t) => (
+                <ThemeOption
+                  key={t.name}
+                  theme={t.name}
+                  handleClick={() => handleThemeChange(t.id, t.name)}
+                />
+              ))}
             </motion.div>
           )}
         </AnimatePresence>
-        <div className=" cursor-pointer flex items-center gap-2 hover:text-hoverText">
+        <div className=" cursor-pointer flex items-center gap-2 hover:text-hoverText min-w-[100px] justify-end">
           <MdStyle className=" text-xl" />
-          <div className=" text-sm">{selectedTheme}</div>
+          <div className=" text-sm whitespace-nowrap">{selectedTheme}</div>
         </div>
       </div>
     </div>

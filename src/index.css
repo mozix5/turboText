@@ -12,14 +12,22 @@
   format('woff');
 }
 
+:root {
+  --bg-primary:#262a33;
+  --bg-secondary:#2c313c;
+  --caret-color:#43ffaf;
+  --text-secondary:#526777;
+  --error-color:#ff5f5f;
+  --text-primary:#e5f7ef;
+  --text-hover:#e5f7ef;
+}
+
 @layer base{
-  html{
-    --bg-primary:#262a33;
-    --caret-color:#43ffaf;
-    --text-secondary:#526777;
-    --error-color:#ff5f5f;
-    --text-primary:#e5f7ef;
-    --text-hover:#e5f7ef;
+  html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow: hidden;
   }
 }
 [data-theme="theme2"]{
@@ -35,7 +43,7 @@
   --caret-color:#43ffaf;
   --text-secondary:#526777;
   --error-color:#ff5f5f;
-  --text-color:#e5f7ef;
+  --text-primary:#e5f7ef;
   --text-hover:#e5f7ef;
 }
 [data-theme="theme4"]{
